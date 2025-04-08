@@ -6,7 +6,7 @@ const Banner = () => {
       {/* Banner Image */}
       <img
         className="h-full w-full object-cover"
-        src="/src/assets/carBanner.jpg"
+        src="/carBanner.jpg"
         alt="Car Banner"
       />
 
