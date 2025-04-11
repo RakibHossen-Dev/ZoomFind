@@ -1,6 +1,7 @@
 // import { useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { useWishlist } from "./context/WishlistContext";
+import { Link } from "react-router";
 
 const Wishlist = () => {
   const { wishlist, removeFromWishlist } = useWishlist();
@@ -42,7 +43,9 @@ const Wishlist = () => {
                 <h3 className="text-xl font-bold text-gray-800">
                   {car.brand} {car.model}
                 </h3>
-                <p className="text-gray-600 text-sm">{car.description}</p>
+                <p className="text-gray-600 text-sm">
+                  {car.description.slice(0, 80)}
+                </p>
 
                 <div className="flex justify-between items-center mt-4">
                   <span className="text-red-600 font-semibold text-lg">
@@ -54,10 +57,11 @@ const Wishlist = () => {
                 <p className="text-sm text-gray-500">
                   Seats: {car.seatingCapacity}
                 </p>
-
-                <button className="mt-4 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-md transition font-medium">
-                  View Details
-                </button>
+                <Link to={`/carDetails/${car._id}`}>
+                  <button className="mt-4 w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-md transition font-medium">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

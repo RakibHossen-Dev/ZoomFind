@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import toast from "react-hot-toast";
 import { useWishlist } from "./context/WishlistContext";
+import { Link } from "react-router";
 
 function App() {
   const [cars, setCars] = useState([]);
@@ -26,7 +27,9 @@ function App() {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const response = await axios.get("http://localhost:9000/cars");
+        const response = await axios.get(
+          "https://zoomfind-server.vercel.app/cars"
+        );
         setCars(response.data);
       } catch (error) {
         console.error("Error fetching cars:", error);
@@ -201,7 +204,9 @@ function App() {
                 <h2 className="text-xl font-semibold">
                   {car.brand} {car.model}
                 </h2>
-                <p className="text-gray-600 text-sm">{car.description}</p>
+                <p className="text-gray-600 text-sm">
+                  {car.description.slice(0, 80)}...
+                </p>
                 <div className="flex justify-between items-center mt-4">
                   <span className="text-red-600 font-bold">${car.price}</span>
                   <span className="text-sm text-gray-500">{car.fuelType}</span>
@@ -211,9 +216,11 @@ function App() {
                 </p>
 
                 {/* View Details Button */}
-                <button className="mt-3 w-full flex items-center justify-center gap-2 bg-red-500 text-white py-2 rounded-md hover:bg-red-700 transition">
-                  View Details
-                </button>
+                <Link to={`/carDetails/${car._id}`}>
+                  <button className="cursor-pointer mt-3 w-full flex items-center justify-center gap-2 bg-red-500 text-white py-2 rounded-md hover:bg-red-700 transition">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
