@@ -45,4 +45,7 @@ Run the development server:
 
 npm start
 
+```
+
 Now, open your browser and go to http://localhost:3000 to view the app.
+```
