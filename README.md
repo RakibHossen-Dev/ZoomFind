@@ -1,12 +1,48 @@
-# React + Vite
+# Car Finder Web App || ZoomFind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live:https://zoomfind.vercel.app/
 
-Currently, two official plugins are available:
+A responsive Car Finder web application built with **React**, **TailwindCSS**, and **Context API**. The app allows users to search, filter, and view car details while managing their wishlist using **LocalStorage**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Car Search:** Users can search cars by brand, price range, fuel type, and seating capacity.
+- **Car Details:** Users can click on a car to view detailed information like images, specifications, and more.
+- **Wishlist:** Users can add/remove cars from their wishlist, stored in LocalStorage for persistence across sessions.
+- **Responsive Design:** Fully responsive and optimized for mobile and desktop.
+- **Pagination:** Displays cars in a paginated list, showing 10 cars per page.
+- **Dark Mode:** Toggle between light and dark modes for better user experience.
+- **Sorting:** Cars can be sorted by price (low to high or high to low).
+- **Live Search & Filter Updates:** Real-time filtering and search updates based on user input.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **Frontend:** React, TailwindCSS
+- **State Management:** Context API (for managing global state such as the wishlist)
+- **Storage:** LocalStorage (for persisting wishlist items)
+- **API Handling:** Custom mock API (or your chosen API for car data)
+- **CSS Framework:** TailwindCSS
+- **Other Libraries:** Axios (for API requests), React Router (for routing)
+
+## Installation
+
+### Prerequisites
+
+Before starting, ensure that you have **Node.js** and **npm** installed on your system.
+
+### Steps to Get Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/car-finder-app.git
+   cd car-finder-app
+   Install dependencies:
+   ```
+
+npm install
+
+Run the development server:
+
+npm start
+
+Now, open your browser and go to http://localhost:3000 to view the app.
